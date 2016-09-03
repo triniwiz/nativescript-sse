@@ -7,5 +7,7 @@ demo/*.d.ts
 demo/lib
 demo/platforms
 demo/node_modules
+demo/metadata-i386
+demo/metadata-x86_64
 node_modules
 .DS_Store

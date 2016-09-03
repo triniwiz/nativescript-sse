@@ -4,8 +4,7 @@
         "module": "commonjs",
         "removeComments": true,
         "experimentalDecorators": true,
-        "noEmitHelpers": true,
-        "declaration": true
+        "noEmitHelpers": true
     },
     "files": [
       "node_modules/tns-core-modules/tns-core-modules.d.ts",

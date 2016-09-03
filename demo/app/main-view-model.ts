@@ -9,23 +9,16 @@ export class HelloWorldModel extends Observable {
     constructor() {
         super();
         this.list = new ObservableArray();
-        this.sse = new SSE('http://localhost:8080');
-        this.sse.connect();
-
-        this.sse.on('onConnect', (data)=> {
+        this.sse = new SSE('http://localhost:8000',{'X-Token':"Test1234"});
+        this.sse.events.on('onConnect', (data)=> {
             console.log(data.object.connected);
         });
-        this.sse.on('onMessage', (data)=> {
+        this.sse.events.on('onMessage', (data)=> {
             this.list.push(JSON.parse(data.object.message.data))
+            console.dump(JSON.parse(data.object.message.data))
         });
-        this.sse.on('onComment', (data)=> {
-            console.log(data.object.comment);
-        });
-        this.sse.on('onError', (data)=> {
+        this.sse.events.on('onError', (data)=> {
             console.log(data.object.error);
         });
-        this.sse.on('willReconnect', (data)=> {
-            console.log(data.object.willReconnect);
-        })
     }
 }
