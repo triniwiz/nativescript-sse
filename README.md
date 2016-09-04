@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/nativescript-sse.svg)](https://www.npmjs.com/package/nativescript-sse)
+[![npm](https://img.shields.io/npm/dt/nativescript-sse.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-sse)
 #NativeScript Server Sent Events
 A client for Server-Sent Events
 
