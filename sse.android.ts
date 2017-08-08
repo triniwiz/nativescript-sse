@@ -11,6 +11,7 @@ export class SSE {
     events: Observable;
     constructor(url: string, headers?: any) {
         this._url = new java.net.URI(url);
+        this.events = new Observable();
         const that = new WeakRef(this);
         this._sseHandler = new EventSourceHandler({
             owner: that.get(),
