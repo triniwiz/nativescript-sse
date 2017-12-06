@@ -1,5 +1,5 @@
 declare var android: any, com: any, java: any;
-import {Observable} from 'data/observable';
+import {Observable, fromObject} from 'data/observable';
 const EventSourceHandler = com.tylerjroach.eventsource.EventSourceHandler;
 const EventSource = com.tylerjroach.eventsource.EventSource;
 export class SSE {
@@ -18,7 +18,7 @@ export class SSE {
             onConnect() {
                 this.owner.events.notify({
                     eventName: 'onConnect',
-                    object: new Observable({
+                    object: new fromObject({
                         connected: true
                     })
                 })
@@ -26,7 +26,7 @@ export class SSE {
             onMessage(event, message) {
                 this.owner.events.notify({
                     eventName: 'onMessage',
-                    object: new Observable({
+                    object: new fromObject({
                         event: event.toString(),
                         message: { data: message.data, lastEventId: message.lastEventId, origin: message.origin }
                     })
@@ -36,7 +36,7 @@ export class SSE {
             onComment(comment) {
                 this.owner.events.notify({
                     eventName: 'onComment',
-                    object: new Observable({
+                    object: new fromObject({
                         comment: comment
                     })
                 })
@@ -45,7 +45,7 @@ export class SSE {
             onError(e) {
                 this.owner.events.notify({
                     eventName: 'onError',
-                    object: new Observable({
+                    object: new fromObject({
                         error: e.getMessage()
                     })
                 })
@@ -53,7 +53,7 @@ export class SSE {
             onClosed(willReconnect) {
                 this.owner.events.notify({
                     eventName: 'willReconnect',
-                    object: new Observable({
+                    object: new fromObject({
                         willReconnect: willReconnect
                     })
                 })
