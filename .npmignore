@@ -4,3 +4,5 @@ demo/
 *.map
 *.ts
 !.d.ts
+references.d.ts
+tsconfig.json
