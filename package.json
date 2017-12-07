@@ -1,6 +1,6 @@
 {
   "name": "nativescript-sse",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A NativeScript client for the Server Sent Events (SSE)",
   "main": "sse",
   "typings":"index.d.ts",

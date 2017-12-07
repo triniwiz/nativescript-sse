@@ -1,17 +1,20 @@
 [![npm](https://img.shields.io/npm/v/nativescript-sse.svg)](https://www.npmjs.com/package/nativescript-sse)
 [![npm](https://img.shields.io/npm/dt/nativescript-sse.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-sse)
-#NativeScript Server Sent Events
-A client for Server-Sent Events
 
-##Install
+# NativeScript Server Sent Events
+
+A NativeScript client for the Server Sent Events (SSE).
+
+## Install
+
 `npm install nativescript-sse`
 
-##Usage
+## Usage
 
-```
-import {SSE} from 'nativescript-sse';
+```ts
+import { SSE } from 'nativescript-sse';
 
-let sse = new SSE(serverApi:string, headers:object);
+let sse = new SSE(serverApi: string, headers: object);
 sse.events.on('onConnect', (data) => {
     console.log(data.object.connected);
 });
@@ -21,5 +24,5 @@ sse.events.on('onMessage', (data) => {
 sse.events.on('onError', (data) => {
     console.log(data.object.error);
 });
-see.close()
+see.close();
 ```
