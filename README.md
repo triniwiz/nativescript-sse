@@ -1,7 +1,9 @@
+# NativeScript Server Sent Events
+
 [![npm](https://img.shields.io/npm/v/nativescript-sse.svg)](https://www.npmjs.com/package/nativescript-sse)
 [![npm](https://img.shields.io/npm/dt/nativescript-sse.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-sse)
+[![Build Status](https://travis-ci.org//triniwiz/nativescript-sse.svg?branch=master)](https://travis-ci.org/triniwiz/nativescript-sse)
 
-# NativeScript Server Sent Events
 
 A NativeScript client for the Server Sent Events (SSE).
 
