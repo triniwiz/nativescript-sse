@@ -1,7 +1,7 @@
 import { Observable } from 'tns-core-modules/data/observable';
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 import { SSE } from 'nativescript-sse';
-
+declare const EventSource;
 export class HelloWorldModel extends Observable {
   list: ObservableArray<any>;
   sse: any;
