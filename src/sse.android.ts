@@ -1,5 +1,5 @@
 import { BaseSSE } from './sse.common';
-import { Observable, fromObject } from 'tns-core-modules/data/observable';
+import { fromObject, Observable } from 'tns-core-modules/data/observable';
 
 declare var android: any, com: any, java: any, WeakRef;
 
@@ -72,12 +72,13 @@ export class SSE extends BaseSSE {
             arr.forEach(key => {
                 this._headers.put(key, headers[key]);
             });
-
-            this._es = new com.tylerjroach.eventsource.EventSource.Builder(this._url)
-                .eventHandler(this._sseHandler)
-                .headers(this._headers)
-                .build();
         }
+
+        this._es = new com.tylerjroach.eventsource.EventSource.Builder(url)
+            .eventHandler(this._sseHandler)
+            .headers(this._headers)
+            .build();
+        this._es.connect();
     }
 
     public addEventListener(event: string): void {
