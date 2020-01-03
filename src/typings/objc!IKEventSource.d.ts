@@ -71,9 +71,9 @@ declare class EventSource extends NSObject implements NSURLSessionDataDelegate {
 
 	isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	onCompleteBridged(onComplete: (p1: number, p2: number, p3: NSError) => void): void;
+	onCompleteBridged(onComplete: (statusCode?: number, shouldReconnect?: boolean, error?: NSError) => void): void;
 
-	onMessage(onMessageCallback: (p1: string, p2: string, p3: string) => void): void;
+	onMessage(onMessageCallback: (p1?: string, p2?: string, p3?: string) => void): void;
 
 	onOpen(onOpenCallback: () => void): void;
 

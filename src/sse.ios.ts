@@ -6,6 +6,7 @@ export class SSE extends BaseSSE {
   private _url: NSURL;
   private _es: EventSource;
   public events: Observable;
+  private lastEventId: string;
   constructor(url: string, headers: any = {}) {
     super(url, headers);
     this.events = fromObject({});
@@ -16,6 +17,7 @@ export class SSE extends BaseSSE {
     const ref = new WeakRef(this);
     const owner = ref.get();
     this._es.onMessage((id, event, data) => {
+      this.lastEventId = id;
       owner.events.notify({
         eventName: 'onMessage',
         object: fromObject({
@@ -33,7 +35,12 @@ export class SSE extends BaseSSE {
           })
         });
       }
-      // TODO implement reconnection
+
+      // NOTE we are not using the shouldReconnect boolean here
+      // so that we match how the android implementation works
+      setTimeout(() => {
+        this._es.connectWithLastEventId(this.lastEventId);
+      }, 2000);
     });
     this._es.onOpen(() => {
       owner.events.notify({
