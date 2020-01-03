@@ -1,7 +1,11 @@
-﻿@import '~nativescript-theme-core/css/core.light.css';
+﻿@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/blue.css";
+
+/* Place any CSS rules you want to apply on both iOS and Android here.
+This is where the vast majority of your CSS code goes. */
 .message {
     color: #000;
     font-size: 20;
     horizontal-align: center;
     padding:20;
-  }
+}
