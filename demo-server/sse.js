@@ -56,8 +56,7 @@ function getRandom(min, max) {
 }
 
 http.createServer(function(req, res) {
- if (req.url == '/sse'){
-
+  if (req.headers.accept && req.headers.accept == 'text/event-stream' && req.url.indexOf('/sse') !== -1){
     req.on('close', function(){
         clearInterval(intervalID);
     });

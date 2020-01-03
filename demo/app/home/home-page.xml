@@ -6,8 +6,7 @@
         <Label text="Home"></Label>
     </ActionBar>
 
-    <StackLayout>
-        <ListView items="{{list}}">
-        </ListView>
-    </StackLayout>
+    <GridLayout>
+        <ListView items="{{list}}"></ListView>
+    </GridLayout>
 </Page>
