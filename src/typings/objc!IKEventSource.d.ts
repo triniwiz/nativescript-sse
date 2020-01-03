@@ -17,7 +17,7 @@ declare class EventSource extends NSObject implements NSURLSessionDataDelegate {
 
 	readonly  // inherited from NSObjectProtocol
 
-	constructor(o: { url: string; headers: NSDictionary<string, string>; });
+	constructor(o: { url: NSURL; headers: NSDictionary<string, string>; });
 
 	URLSessionDataTaskDidBecomeDownloadTask(session: NSURLSession, dataTask: NSURLSessionDataTask, downloadTask: NSURLSessionDownloadTask): void;
 
@@ -55,15 +55,15 @@ declare class EventSource extends NSObject implements NSURLSessionDataDelegate {
 
 	class(): typeof NSObject;
 
-	close(): void;
-
 	conformsToProtocol(aProtocol: any /* Protocol */): boolean;
 
-	connect(): void;
+	connectWithLastEventId(lastEventId: string): void;
+
+	disconnect(): void;
 
 	events(): NSArray<string>;
 
-	initWithUrlHeaders(url: string, headers: NSDictionary<string, string>): this;
+	initWithUrlHeaders(url: NSURL, headers: NSDictionary<string, string>): this;
 
 	isEqual(object: any): boolean;
 
@@ -71,7 +71,7 @@ declare class EventSource extends NSObject implements NSURLSessionDataDelegate {
 
 	isMemberOfClass(aClass: typeof NSObject): boolean;
 
-	onError(onErrorCallback: (p1: NSError) => void): void;
+	onCompleteBridged(onComplete: (p1: number, p2: number, p3: NSError) => void): void;
 
 	onMessage(onMessageCallback: (p1: string, p2: string, p3: string) => void): void;
 

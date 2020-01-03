@@ -1,6 +1,6 @@
 import { Observable } from 'tns-core-modules/data/observable';
 export abstract class BaseSSE {
-  protected events: Observable;
+  public events: Observable;
   constructor(url: string, headers: any = {}) {}
   public abstract addEventListener(event: string): void;
   public abstract removeEventListener(event: string): void;
