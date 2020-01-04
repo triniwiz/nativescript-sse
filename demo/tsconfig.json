@@ -8,7 +8,8 @@
 		"noEmitOnError": true,
 		"skipLibCheck": true,
 		"lib": [
-			"es6"
+			"es6",
+			"dom"
 		],
 		"baseUrl": ".",
 		"paths": {

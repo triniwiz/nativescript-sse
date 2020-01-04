@@ -1,10 +1,10 @@
 import { BaseSSE } from './sse.common';
 import { Observable, fromObject } from 'tns-core-modules/data/observable';
-declare const WeakRef;
+declare const WeakRef, EventSource;
 export class SSE extends BaseSSE {
   private _headers: NSDictionary<any, any>;
   private _url: NSURL;
-  private _es: EventSource;
+  private _es: any;
   public events: Observable;
   private lastEventId: string;
   constructor(url: string, headers: any = {}) {
