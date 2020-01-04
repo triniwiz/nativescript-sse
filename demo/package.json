@@ -11,9 +11,15 @@
   "dependencies": {
     "@nativescript/theme": "~2.2.1",
     "nativescript-sse": "file:../src",
+    "nativescript-unit-test-runner": "0.7.0",
     "tns-core-modules": "~6.3.0"
   },
   "devDependencies": {
+    "@types/jasmine": "3.5.0",
+    "karma": "4.4.1",
+    "karma-jasmine": "2.0.1",
+    "karma-nativescript-launcher": "0.4.0",
+    "karma-webpack": "3.0.5",
     "nativescript-dev-webpack": "~1.4.0",
     "typescript": "~3.5.3"
   },
