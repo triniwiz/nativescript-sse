@@ -1,12 +1,12 @@
-var Sse = require("nativescript-sse").Sse;
-var sse = new Sse();
+var SSE = require("nativescript-sse").SSE;
+var sse = new SSE('http://localhost:8000/sse', {'X-Token': 'Test1234'});
 
-describe("greet function", function() {
+describe("Events", function() {
     it("exists", function() {
-        expect(sse.greet).toBeDefined();
+        expect(sse.events).toBeDefined();
     });
 
-    it("returns a string", function() {
-        expect(sse.greet()).toEqual("Hello, NS");
+    it("has on method", function() {
+        expect(sse.events.on).toBeDefined();
     });
 });

@@ -2,6 +2,7 @@
 .idea
 .DS_Store
 *.js
+*.esm.json
 *.js.map
 *.log
 src/*.d.ts
@@ -9,14 +10,15 @@ src/*.d.ts
 !src/references.d.ts
 !src/scripts/*.js
 !seed-tests/*.js
-seed-tests/seed-copy/**/*.*
 seed-tests/seed-copy-new-git-repo/**/*.*
 !demo/karma.conf.js
 !demo/app/tests/*.js
+!demo-server/*.js
 demo/*.d.ts
 !demo/references.d.ts
 demo/lib
 demo/platforms
+demo/hooks
 node_modules
 publish/src
 publish/package

@@ -8,7 +8,7 @@ export class SSE extends BaseSSE {
     private _es: any;
     private _headers: any;
     private _url: any;
-    protected events: Observable;
+    public events: Observable;
 
     constructor(url: string, headers: any = {}) {
         super(url, headers);
