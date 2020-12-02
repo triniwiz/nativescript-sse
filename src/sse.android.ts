@@ -1,5 +1,5 @@
 import { BaseSSE } from './sse.common';
-import { fromObject, Observable } from 'tns-core-modules/data/observable';
+import { fromObject, Observable } from '@nativescript/core';
 
 declare var android: any, com: any, java: any, WeakRef;
 

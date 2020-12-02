@@ -1,7 +1,5 @@
-import { Observable } from "tns-core-modules/data/observable";
-import { ObservableArray } from 'tns-core-modules/data/observable-array';
+import { Observable, ObservableArray, isAndroid } from "@nativescript/core";
 import { SSE } from 'nativescript-sse';
-import { isAndroid } from 'tns-core-modules/platform';
 
 export class HomeViewModel extends Observable {
     list: ObservableArray<string>;
