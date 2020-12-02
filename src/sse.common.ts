@@ -1,4 +1,4 @@
-import { Observable } from 'tns-core-modules/data/observable';
+import { Observable } from '@nativescript/core';
 export abstract class BaseSSE {
   public events: Observable;
   constructor(url: string, headers: any = {}) {}

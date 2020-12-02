@@ -1,5 +1,5 @@
 import { BaseSSE } from './sse.common';
-import { Observable, fromObject } from 'tns-core-modules/data/observable';
+import { Observable, fromObject } from '@nativescript/core';
 declare const WeakRef, EventSource;
 export class SSE extends BaseSSE {
   private _headers: NSDictionary<any, any>;
